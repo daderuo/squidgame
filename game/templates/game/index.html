@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squid Game</title>
+    <script src="{% static 'game/BallGame.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'game/style.css' %}">
+</head>
+<body>
+    {{ user|json_script:"user" }}
+    <div id="container">
+        <div id="Welcome"><h1 >Even or Odd ?</h1></div>
+
+        <div id="game-container">
+            <h2 id="computer-ball"></h2>
+            <h2 id="user-ball"></h2>
+            <button id="even">EVEN</button>
+            <button id="odd">ODD</button>
+            <button id="select">select</button>
+            <input type="range" id="user-ball-select" list="tickmarks" 
+            name="UserBall" min="1" value="0" max="10" step="1">
+            <datalist id="tickmarks">
+                <option value="0" label="0"></option>
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5" label="5"></option>
+                <option value="6"></option>
+                <option value="7"></option>
+                <option value="8"></option>
+                <option value="9"></option>
+                <option value="10" label="10"></option>
+            </datalist>            
+        </div>
+    </div>    
+</body>
+</html>

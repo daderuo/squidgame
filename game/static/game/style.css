@@ -1,0 +1,68 @@
+@media (min-width: 1000px){
+    #Welcome h1{
+        font-size: 4vw;
+    }
+
+    #game-container h1{
+        font-size: 5vw;
+    }
+
+    #game-container h2{
+        font-size: 3vw;
+    }
+
+    #even,#odd,#select,#restart, #dashboard{
+        font-size: 3vw;
+        width: 25%;
+    }
+}
+
+@media (max-width: 999px){
+    #Welcome h1{
+        font-size: 40px;
+    }
+
+    #game-container h1{
+        font-size: 50px;
+    }
+
+    #game-container h2{
+        font-size: 30px;
+    }
+
+    #even,#odd,#select,#restart, #dashboard{
+        font-size: 30px;
+        width: fit-content;
+    }
+}
+
+#container{
+    background-color:rgba(255, 255, 255, 0.788);
+    width: 50%;
+    opacity: 0%;
+    min-width: 500px;
+    margin:auto;
+    padding: 10px;
+}
+
+#Welcome{
+    text-align: center;
+}
+
+
+body{
+    text-align: center;
+    background-image: url('http://127.0.0.1:8000/media/photo/biglie_bg.jpeg');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+#game-container h1{
+    font-weight: bold;
+    color: red;
+}
+
+#even,#odd,#select, #restart, #dashboard{
+    color: rgb(0, 159, 252);
+}
+

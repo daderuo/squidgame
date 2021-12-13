@@ -1,0 +1,41 @@
+{% extends "dashboard/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+
+
+
+    <hr>
+    <button class="btn btn-outline-primary" id="home">Home</button>
+    <button class="btn btn-outline-primary" id="ranking">Ranking</button>
+    <a class="btn  btn-outline-primary" href="{% url 'logout' %}">Log Out</a>
+    <hr>
+
+    <div id='game-view'>
+        <h1>Dear {{ request.user }}, welcome back to Dade Game</h1>
+        <h2>When you feel ready select the game</h2>
+        <h3>Games</h3>
+        <div id="game-list">            
+        </div>
+    </div>
+
+    <div id="ranking-view">
+        <table>
+            <tr>
+              <td class="gamer-name">Username</td>
+              <td class="gamer-total">Total Games</td>
+              <td class="gamer-win">Win Games</td>
+            </tr>
+        </table>
+        <table id="gamer-list">
+            
+        </table>
+                           
+    </div>    
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'dashboard/script.js' %}"></script>
+{% endblock %}

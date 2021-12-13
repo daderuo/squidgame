@@ -1,0 +1,61 @@
+#game-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#game-list > div {   
+    border: 1px solid rgb(0, 102, 255);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+.game h3{
+    margin-top: 160px;
+}
+
+.game:hover{
+    opacity: 50%;
+}
+
+.game{
+    text-align: center;
+}
+
+@media (min-width: 1000px){
+    td{
+        font-size: 2vw; 
+    }
+}
+
+@media (max-width: 999px){
+    td{
+        font-size: 20px; 
+    }
+}
+
+table, th, td {
+    border:1px solid rgb(0, 80, 253);
+    color :rgb(0, 131, 253);
+    font-weight:lighter;
+}
+
+table{
+    table-layout: fixed;
+    width: 100%;
+}
+
+.gamer-name{
+    width: 60%;
+}
+
+.gamer-total{
+    width: 20%;
+}
+
+.gamer-win{
+    width: 20%;
+}
