@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wait Room</title>
+    <script>
+        const queryString = window.location.search;
+        console.log(queryString);
+
+        const urlParams = new URLSearchParams(queryString);
+
+        const g = urlParams.get('game')
+        console.log(g);
+
+        setInterval(function(){ 
+            fetch(`/find_game?game=${g}`)
+            .then(response => response.json())
+            .then(game => {
+                console.log(game.match);  
+                console.log(game.id);  
+
+                if(game.match){
+                    location.href = 'http://127.0.0.1:8000/game' + g + '?m_id='+ game.id;
+                }
+            });
+        }, 2000);
+    </script>
+</head>
+<body>
+    <h1>please wait for opponent</h1>
+</body>
+</html>
+

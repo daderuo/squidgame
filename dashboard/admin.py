@@ -5,4 +5,6 @@ from .models import *
 
 admin.site.register(User)
 admin.site.register(Game)
+admin.site.register(Match)
+admin.site.register(Wait)
 

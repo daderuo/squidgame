@@ -42,7 +42,37 @@ function load_game_list(){
         gs.forEach(function(g){
             game = document.createElement('div');
             game.addEventListener('click', function(){ 
-                location.href = 'http://127.0.0.1:8000/game' + g.id + '/';
+                fetch(`/find_game?game=${g.id}`)
+                .then(response => response.json())
+                .then(game => {
+                    console.log(game.match);  
+                    console.log(game.id);  
+
+                    if(game.match){
+                        location.href = 'http://127.0.0.1:8000/game' + g.id + '?m_id='+ game.id;
+                    }
+                    else{
+                        fetch(`/find_opp?game=${g.id}`)
+                        .then(response => response.json())
+                        .then(opp => {
+                            console.log(opp.user);  
+                            console.log(opp.op);
+                            if (!opp.op){
+                                location.href = 'http://127.0.0.1:8000/waiting?game='+g.id;
+                            }
+                            else{
+                                fetch(`/match_create?opp=${opp.user}&game=${g.id}`)
+                                .then(response => response.json())
+                                .then(match => {
+                                    location.href = 'http://127.0.0.1:8000/game' + g.id + '?m_id='+ match.match_id;
+                                });
+                            }
+                        });
+                    }
+                });
+
+                
+                //location.href = 'http://127.0.0.1:8000/game' + g.id + '/';
             })
             game.className = 'game';
             game.style.backgroundImage = "url('http://127.0.0.1:8000/media/" + g.photo + "')";
