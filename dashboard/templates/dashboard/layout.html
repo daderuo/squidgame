@@ -14,6 +14,12 @@
     </head>
     <body>
         <div class="container">
+            <hr>
+            <button class="btn btn-outline-primary" id="home">Home</button>
+            <button class="btn btn-outline-primary" id="ranking">Ranking</button>
+            <a class="btn  btn-outline-primary" href="{% url 'logout' %}">Log Out</a>
+            <hr>
+            
             {% block body %}
             {% endblock %}
         </div>        
